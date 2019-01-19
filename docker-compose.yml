@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  code:
+    build: code
+    volumes:
+      - ./code/:/code/
+    tty: true
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
